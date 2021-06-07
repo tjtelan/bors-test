@@ -1,0 +1,16 @@
+name: CI 
+
+on:
+  push:
+    branches:
+      - stable 
+  workflow_dispatch:
+jobs:
+  release:
+    name: First stage 
+    runs-on: ubuntu-latest
+    permissions: write-all
+    steps:
+      - name: 
+        run: |
+          echo hello

@@ -1,0 +1,27 @@
+name: CI 
+
+on:
+  push:
+    branches:
+      - staging
+      - trying
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+jobs:
+  ci_basic:
+    name: CI First stage 
+    runs-on: ubuntu-latest
+    permissions: write-all
+    steps:
+      - name: 
+        run: |
+          echo hello
+  done:
+    name: Done
+    if: github.event_name == 'push' && github.ref == 'refs/heads/staging'
+    needs: github_release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Done
+        run: echo "Done!"
