@@ -14,13 +14,12 @@ jobs:
     runs-on: ubuntu-latest
     permissions: write-all
     steps:
-      - name: 
+      - name: job name 
         run: |
           echo hello
   done:
     name: Done
     if: github.event_name == 'push' && github.ref == 'refs/heads/staging'
-    needs: github_release
     runs-on: ubuntu-latest
     steps:
       - name: Done
